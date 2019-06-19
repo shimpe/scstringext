@@ -1,0 +1,11 @@
+(
+  name: "ScStringExt",
+  summary: "extensions to the String class",
+  version: "1.0",
+  schelp: "ScStringExt.schelp",
+  dependencies: ["Ctk", "https://github.com/ambisonictoolkit/atk-sc3.git"],
+  license: "GNU GPL v3.0",
+  copyright: "shimpe",
+  ext_dependency: "",
+  url: "https://github.com/shimpe/scstringext"
+)
