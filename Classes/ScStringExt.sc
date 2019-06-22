@@ -34,4 +34,23 @@
         };
         ^result;
     }
+
+    betweenRegex {
+        | startregex, endregex, startregex_idx=0, endregex_idx=0 |
+        var startpos, endpos, spos, epos;
+        startpos = this.findRegexp(startregex);
+        spos = 0;
+        if (startpos.size <= startregex_idx) {
+            ^"";
+        } {
+            spos = startpos[startregex_idx][0] + startpos[startregex_idx][1].size;
+        };
+        endpos = this.findRegexp(endregex);
+        if (endpos.size <= endregex_idx) {
+            ^"";
+        } {
+            epos = endpos[endregex_idx][0];
+        }
+        ^this.copyRange(spos, epos-1);
+    }
 }

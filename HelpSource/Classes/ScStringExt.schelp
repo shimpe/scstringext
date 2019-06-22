@@ -1,46 +1,43 @@
 TITLE:: ScStringExt
 summary:: extensions to the String class
-categories:: Undocumented classes
-related:: Classes/SomeRelatedClass, Reference/SomeRelatedStuff, etc.
+categories:: Utility classes
 
 DESCRIPTION::
 extra operations on strings
 
 CLASSMETHODS::
 
-METHOD:: new
-(describe method here)
-
-ARGUMENT:: arga
-(describe argument here)
-
-ARGUMENT:: argb
-(describe argument here)
-
-ARGUMENT:: argc
-(describe argument here)
-
-returns:: (describe returnvalue here)
-
-
 INSTANCEMETHODS::
 
-METHOD:: init
-(describe method here)
+METHOD:: splitRegex
+splits a string on a regex
 
-ARGUMENT:: arga
-(describe argument here)
+ARGUMENT:: regex
+regex on which to split the string
 
-ARGUMENT:: argb
-(describe argument here)
+returns:: a list of strings
 
-ARGUMENT:: argc
-(describe argument here)
+METHOD:: replaceRegex
+replace occurrences of a regex with a replacement
 
-returns:: (describe returnvalue here)
+ARGUMENT:: regex
+string representing the regex to search fo
+
+ARGUMENT:: replacement
+string representing what should replace the found regexes
+
+returns:: a string with occurrences of regex replaced
 
 EXAMPLES::
 
 code::
-(some example code)
+(
+"abcdefabcdef".splitRegex("bcd"); // yields [ "a", "efa", "ef" ]
+"12-05-1984".replaceRegex("\\d+", "x"); // yields "x-x-x"
+"12-05-1984".splitRegex("-"); // yields [ "12", "05", "1984" ]
+"appple".replaceRegex("p+", "pp"); // yields "apple"
+"<control> a=b <group> c=d <region> e=f <region> g=h <group> <region> i=j".betweenRegex("<control>", "<group>")
+)
 ::
+
+String
